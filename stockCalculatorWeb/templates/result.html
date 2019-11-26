@@ -1,0 +1,14 @@
+
+				
+<div class="card">
+	 <div class="card-body">
+		
+		<h4 id="stock-title" class="card-title"> <strong> {{ stock['cname'] }}(STK NAME {{ stock['Meta Data']['2. Symbol'] }})</strong>  </h4>
+		<p class='card-text'>Stock opened at ${{ stock['latest']['1. open'] }} On <strong> {{ stock['Meta Data']['3. Last Refreshed'] }} {{ stock['Meta Data']['5. Time Zone'] }}</strong></p>
+			
+		<div class="alert {% if stock['latest']['sign'] == '-' %} alert-danger {% else %} alert-success {% endif %} " role="alert">
+			 <h3 style="display:inline-block">${{ stock['latest']['4. close'] }}</h3>  {{ stock['latest']['sign'] }} ${{ stock['latest']['net'] }}({{ stock['latest']['sign'] }}{{ stock['latest']['percent'] }}%) 
+		</div>
+	
+	</div>
+</div>
